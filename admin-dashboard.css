@@ -18,7 +18,7 @@
 .main-container {
     font-family: 'Roboto';
     display: grid;
-    font-size: 18px;
+    font-size: clamp(14px, 1.4vw, 24px);
     grid-template-columns: 2fr 8fr;
     height: 100vh;
 }
@@ -26,6 +26,11 @@
 .title svg {
     fill: white;
     height: 36px;
+}
+
+.search-bar svg {
+    fill:rgb(69, 69, 69);
+    height: 25px;
 }
 
 li svg {
@@ -85,6 +90,10 @@ aside {
 
 header {
     background-color: rgb(0, 218, 0);
+}
+
+.search-bar {
+    display: flex;
 }
 
 article {
