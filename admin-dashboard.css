@@ -1,3 +1,7 @@
+html {
+    font-size: clamp(12px, 1.4vw, 28px);
+}
+
 * {
     margin:0;
     padding:0;
@@ -12,6 +16,8 @@
     font-style: normal;
     font-display: swap;
 }
+
+
 
 
 
@@ -30,7 +36,7 @@
 
 .search-bar svg {
     fill:rgb(69, 69, 69);
-    height: 25px;
+    height: 1.5rem;
 }
 
 .user-info {
@@ -120,6 +126,9 @@ header {
     align-items: center;
     gap:10px;
     max-height: 200px;
+    box-shadow: 5px 2px  rgb(182, 182, 182);
+    position: relative;
+    z-index: 10;
 }
 
 main {
@@ -132,7 +141,67 @@ aside {
     background-color: #1992d4;
 }
 
+article {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 1rem;
+}
 
+.projects {
+    display: grid;
+    grid-row:1/5;
+    grid-template-columns: repeat(2, minmax(200px, 50%));
+    grid-auto-rows: minmax(200px, 25%);
+    justify-content:space-between;
+    gap: 3rem;
+    padding:1rem;
+}
+
+
+.announcements {
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.trending {
+    grid-column: 2/3;
+    grid-row: 3/5;
+}
+
+.card  {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem;
+    background-color:white;
+    border-radius: 5px;
+    border-left: 10px solid rgb(235, 189, 4);
+    overflow-y: auto;
+}
+
+h4{
+    font-size:0.8rem;
+    margin-top: 0.6rem;
+}
+
+.card p {
+    font-size:0.7rem;
+    color:rgb(121, 121, 121);
+    margin-top:0.3rem;
+}
+
+.prj-icons {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.prj-icons svg{
+    margin-left:1rem;
+}
+
+.card svg {
+    width:clamp(20px,1.2rem, 40px);
+    fill:#464646;
+}
 
 .search-bar {
     display: flex;
@@ -141,14 +210,18 @@ aside {
 }
 
 input[type="text"] {
-    height: 20px;
-    width: clamp(30px, 40vw, 700px);
-    border-radius: 5px;
+    height: clamp(9px,1.5rem,30px);
+    width: clamp(250px,30rem,700px);
+    border-radius: 1.2rem;
+    background-color: rgb(220, 220, 220);
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
 
 }
 
 article {
-    background-color: rgb(60, 60, 208);
+    background-color: rgb(219, 225, 227);
     flex-grow: 1;
 }
 
@@ -165,5 +238,6 @@ button {
     color: white;
     background-color: #1992D4;
     border-radius:20px;
+    border:none;
 }
 
