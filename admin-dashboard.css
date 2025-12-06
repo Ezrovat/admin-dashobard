@@ -115,9 +115,7 @@ li {
     margin-top: 0.7rem;
 }
 
-article * {
-    border: 1px solid black;
-}
+
 
 header {
     padding: 15px 30px;
@@ -144,24 +142,59 @@ aside {
 article {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    padding: 1rem;
+    padding: 1.5rem;
+    
 }
+
+
 
 .projects {
     display: grid;
     grid-row:1/5;
-    grid-template-columns: repeat(2, minmax(200px, 50%));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: minmax(200px, 25%);
     justify-content:space-between;
     gap: 3rem;
-    padding:1rem;
+   
 }
 
+article > * {
+    position: relative;
+}
 
-.announcements {
+.projects,
+.announcements-out,
+.announcements-in {
+    padding: 1rem;
+}
+
+.section-title {
+    position: absolute;
+    top:-1.2rem;
+    left: 1.3rem;
+    font-size:0.8rem;
+}
+
+.announcements-out {
     grid-column: 2/3;
-    grid-row: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    
 }
+
+.announcements-in {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-around;
+    gap:1rem;
+}
+
+.announcements-in > div {
+    flex:1;
+    border-bottom: 1px solid grey;
+}
+
 
 .trending {
     grid-column: 2/3;
@@ -173,20 +206,39 @@ article {
     flex-direction: column;
     padding: 0.7rem;
     background-color:white;
-    border-radius: 5px;
     border-left: 10px solid rgb(235, 189, 4);
     overflow-y: auto;
 }
 
-h4{
-    font-size:0.8rem;
+.card,
+.announcements-in {
+    border-radius: 5px;
+}
+
+.card h4 {
+    font-size:16px;
+  
+}
+
+h4 {
     margin-top: 0.6rem;
 }
 
-.card p {
-    font-size:0.7rem;
+.announcements-in h4 {
+    font-size:12px;
+    margin-top:0;
+}
+
+.card p,
+.announcements-in p {
+    font-size:12px;
     color:rgb(121, 121, 121);
     margin-top:0.3rem;
+}
+
+.announcements-in p {
+    font-size:10px;
+    padding-bottom: clamp(2px, 1rem, 5px);
 }
 
 .prj-icons {
@@ -199,7 +251,7 @@ h4{
 }
 
 .card svg {
-    width:clamp(20px,1.2rem, 40px);
+    width:22px;
     fill:#464646;
 }
 
@@ -224,6 +276,7 @@ article {
     background-color: rgb(219, 225, 227);
     flex-grow: 1;
 }
+
 
 .button-section{
     display: flex;
